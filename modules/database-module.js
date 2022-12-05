@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URL = 'mongodb+srv://admin1:admin1@cluster0.xsg0sio.mongodb.net/?retryWrites=true&w=majority';
+const URL = 'mongodb+srv://admin1:admin1@cluster0.xsg0sio.mongodb.net/simulador';
 
 class Database {
      constructor() {
