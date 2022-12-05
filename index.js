@@ -1,7 +1,9 @@
 const express = require('express');                              // Express
 const cors = require('cors');                                    // CORS
-const bodyParser = require('body-parser')                        // for parsing JSON
+const bodyParser = require('body-parser')                        // para analizar archivos JSON
 const database = require('./modules/database-module');           // Conexión a la base de datos
+
+const usuariosRoute = require('./routers/usuarios-route')        // exporto el archivo route de usuarios
 
 
 require('dotenv').config();   
@@ -13,12 +15,12 @@ app.use(express.json());                                         // Permite que 
 app.use(bodyParser.json());                                      // Permite que el servidor entienda json
 app.use(bodyParser.urlencoded({ extended: true }));              // Permite que el servidor entienda formularios
 
-
-
+// Rutas
+app.use('/usuario', usuariosRoute);                             //Ruta para usuarios
 
 //Mensaje
 app.get('/', function (req, res) {
-     res.send('Servidor Funcionando');
+     res.send('Servidor Simulador Financiero Funcionando');
 });
 
 
