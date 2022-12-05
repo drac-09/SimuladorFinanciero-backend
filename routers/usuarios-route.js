@@ -29,8 +29,6 @@ router.post('/registrar', async (req, res) => {
      } else {
           const user = new usuario(
                {
-                    // nombre: req.body.nombre,
-                    // apellido: req.body.apellido,
                     correo: req.body.correo,
                     contrasenia: req.body.contrasenia,
                }
@@ -39,7 +37,10 @@ router.post('/registrar', async (req, res) => {
           await user.save().then(resultado => {
                // res.send({ mensaje: 'Usuario Registrado', cliente: user });
                const token = jwt.sign({_id: user._id}, 'claveSecreta');
-               res.status(200).json({token});
+               res.status(200).json({
+                                        "token":token,
+                                        "id":user._id
+                                   });
           }).catch(error => {
                res.send(error);
                res.end();
