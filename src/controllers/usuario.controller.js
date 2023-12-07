@@ -30,6 +30,7 @@ export const registro = async (req, res) => {
       id: usuarioGuardado._id,
       usuario: usuarioGuardado.usuario,
       correo: usuarioGuardado.correo,
+      token: token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -55,6 +56,7 @@ export const acceso = async (req, res) => {
       id: usuarioEncontrado._id,
       usuario: usuarioEncontrado.usuario,
       correo: usuarioEncontrado.correo,
+      token: token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

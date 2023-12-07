@@ -6,7 +6,7 @@ import {
   // profile,
   // verifyToken,
 } from "../controllers/usuario.controller.js";
-import { autenticacionRequerida } from "../middlewares/validarToken.js";
+// import { autenticacionRequerida } from "../middlewares/validarToken.js";
 import { validarSchema } from "../middlewares/validador.middleware.js";
 import { registroSchema, accesoSchema } from "../schemas/usuario.schema.js";
 

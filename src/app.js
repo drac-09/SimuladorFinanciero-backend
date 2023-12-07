@@ -5,7 +5,7 @@ import cors from "cors";
 
 import { PORT_FRONTEND } from "./config.js";
 import usuarioRoutes from "./routers/usuario.routes.js";
-// import taskRoutes from "./routers/tasks.routes.js";
+import escenarioRoutes from "./routers/escenario.routes.js";
 
 const app = express();
 
@@ -22,6 +22,6 @@ app.use(express.json());
 
 // Rutes
 app.use("/api/", usuarioRoutes);
-// app.use("/api/", taskRoutes);
+app.use("/api/", escenarioRoutes);
 
 export default app;
