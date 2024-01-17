@@ -17,8 +17,7 @@ const lista = [
 app.use(
   cors({
     origin: lista,
-    // origin: `http://localhost:${process.env.PORT_FRONTEND}`,
-    credentials: true,
+    credentials: false,
   })
 );
 
