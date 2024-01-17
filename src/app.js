@@ -11,7 +11,7 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin: process.env.URL_FRONT,
+    origin: `${process.env.URL_FRONT}`,
     // origin: `http://localhost:${process.env.PORT_FRONTEND}`,
     credentials: true,
   })
