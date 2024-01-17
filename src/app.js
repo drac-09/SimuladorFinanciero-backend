@@ -11,8 +11,7 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin:
-      "https://simulador-financiero-frontend-iunaqa6ir-drac-09.vercel.app",
+    origin: "https://simulador-financiero-frontend.vercel.app/",
     // origin: `http://localhost:${process.env.PORT_FRONTEND}`,
     credentials: true,
   })
