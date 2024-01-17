@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "https://simulador-financiero-backend.vercel.app",
+      "dest": "/src/index.js",
       "methods": [
         "GET",
         "POST",
