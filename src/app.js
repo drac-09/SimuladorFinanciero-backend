@@ -14,12 +14,7 @@ const lista = [
 ];
 
 // Middlewares
-app.use(
-  cors({
-    origin: lista,
-    credentials: false,
-  })
-);
+app.use(cors());
 
 app.use(morgan("dev"));
 app.use(cookieParser());
