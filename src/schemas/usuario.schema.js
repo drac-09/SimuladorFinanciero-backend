@@ -1,9 +1,6 @@
 import { z } from "zod";
 
 export const registroSchema = z.object({
-  usuario: z.string({
-    required_error: "El usuario es requerido",
-  }),
   correo: z
     .string({
       required_error: "El correo es requerido",

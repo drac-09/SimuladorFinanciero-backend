@@ -28,7 +28,6 @@ export const registro = async (req, res) => {
     res.cookie("token", token);
     res.json({
       id: usuarioGuardado._id,
-      usuario: usuarioGuardado.usuario,
       correo: usuarioGuardado.correo,
       token: token,
     });
@@ -54,7 +53,6 @@ export const acceso = async (req, res) => {
     res.cookie("token", token);
     res.json({
       id: usuarioEncontrado._id,
-      usuario: usuarioEncontrado.usuario,
       correo: usuarioEncontrado.correo,
       token: token,
     });

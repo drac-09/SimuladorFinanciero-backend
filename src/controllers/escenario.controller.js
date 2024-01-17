@@ -46,4 +46,21 @@ export const crearEscenario = async (req, res) => {
   }
 };
 
+export const actualizarEscenario = async (req, res) => {
+  try {
+    const escenario = await Escenario.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    if (!escenario)
+      return res.status(404).json({ message: "Escenario no encontrado" });
+    res.json(escenario);
+  } catch (error) {
+    return res.status(404).json({ message: "Escenario no encontrado" });
+  }
+};
+
 // nombre, fe_flujos, fe_depreciacion, rcb_datos, pr_flujo, pr_acumulado, pr_Recuperacion, pp_tabla, pp_datos

@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   obtenerEscenarios,
   crearEscenario,
+  actualizarEscenario,
 } from "../controllers/escenario.controller.js";
 
 import { autenticacionRequerida } from "../middlewares/validarToken.js";
@@ -17,5 +18,6 @@ router.post(
   validarSchema(crearEscenarioSchema),
   crearEscenario
 );
+router.put("/escenarios/:id", autenticacionRequerida, actualizarEscenario);
 
 export default router;
