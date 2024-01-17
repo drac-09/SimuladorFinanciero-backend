@@ -3,7 +3,6 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import { PORT_FRONTEND } from "./config.js";
 import usuarioRoutes from "./routers/usuario.routes.js";
 import escenarioRoutes from "./routers/escenario.routes.js";
 
@@ -12,7 +11,7 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin: `http://localhost:${PORT_FRONTEND}`,
+    origin: `http://localhost:${process.env.PORT_FRONTEND}`,
     credentials: true,
   })
 );

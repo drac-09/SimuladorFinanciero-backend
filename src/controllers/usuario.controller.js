@@ -2,7 +2,6 @@ import Usuario from "../models/usuario.model.js";
 import bcrypt from "bcrypt";
 import { crearAccesoToken } from "../libs/jwt.js";
 import jwt from "jsonwebtoken";
-import { TOKEN_SECRET } from "../config.js";
 
 export const registro = async (req, res) => {
   const { usuario, correo, contrasenia } = req.body;

@@ -7,7 +7,7 @@ export const obtenerEscenarios = async (req, res) => {
     }).populate("usuario");
     res.json(escenarios);
   } catch (error) {
-    console.log(req);
+    // console.log(req);
     return res.status(404).json({ message: `Algo salio mal` });
   }
 };
