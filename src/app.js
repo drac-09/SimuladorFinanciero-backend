@@ -9,13 +9,7 @@ import escenarioRoutes from "./routers/escenario.routes.js";
 const app = express();
 
 // Middlewares
-app.use(
-  cors({
-    origin: `${process.env.URL_FRONT}`,
-    // origin: `http://localhost:${process.env.PORT_FRONTEND}`,
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.json());
