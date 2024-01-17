@@ -30,4 +30,9 @@ app.use(express.json());
 app.use("/api/", usuarioRoutes);
 app.use("/api/", escenarioRoutes);
 
+//Mensaje
+app.get("/prueba", function (req, res) {
+  res.send("Servidor Funcionando");
+});
+
 export default app;
