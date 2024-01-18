@@ -31,7 +31,16 @@ app.use(
     credentials: true,
   })
 );
-app.options("*", cors());
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", lista);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.json());
