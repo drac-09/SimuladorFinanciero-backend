@@ -17,8 +17,18 @@ const lista = [
 app.use(
   cors({
     origin: lista,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Origin",
+      "X-Requested-With",
+      "Accept",
+      "x-client-key",
+      "x-client-token",
+      "x-client-secret",
+      "Authorization",
+    ],
     credentials: true,
-    optionSuccessStatus: 200,
   })
 );
 app.options("*", cors());
