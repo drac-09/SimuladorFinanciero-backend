@@ -17,7 +17,7 @@ const lista = [
 app.use(
   cors({
     origin: lista,
-    credentials: true,
+    // credentials: true,
   })
 );
 app.options("*", cors());
