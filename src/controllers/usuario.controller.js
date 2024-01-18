@@ -67,6 +67,10 @@ export const cerrar = (req, res) => {
   return res.sendStatus(200);
 };
 
+export const prueba = (req, res) => {
+  return res.status(400).json(["Paso hasta aqui"]);
+};
+
 // export const profile = async (req, res) => {
 //   const userFound = await User.findById(req.user.id);
 //   if (!userFound) return res.status(400).json({ message: "User no found" });
