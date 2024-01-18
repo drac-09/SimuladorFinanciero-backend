@@ -17,7 +17,8 @@ const lista = [
 app.use(
   cors({
     origin: lista,
-    // credentials: true,
+    credentials: true,
+    optionSuccessStatus: 200,
   })
 );
 app.options("*", cors());
