@@ -16,7 +16,7 @@ const router = Router();
 router.post("/registro", validarSchema(registroSchema), registro);
 router.post("/acceso", validarSchema(accesoSchema), acceso);
 router.post("/cerrar", cerrar);
-router.get("/prueba", prueba);
+router.post("/prueba", prueba);
 // router.get("/verify", verifyToken);
 // router.get("/profile", autenticacionRequired, profile);
 
