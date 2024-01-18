@@ -17,29 +17,9 @@ const lista = [
 app.use(
   cors({
     origin: lista,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Origin",
-      "X-Requested-With",
-      "Accept",
-      "x-client-key",
-      "x-client-token",
-      "x-client-secret",
-      "Authorization",
-    ],
     credentials: true,
   })
 );
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", lista);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
 app.use(morgan("dev"));
 app.use(cookieParser());
