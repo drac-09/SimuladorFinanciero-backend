@@ -36,7 +36,10 @@ export const registro = async (req, res) => {
 };
 
 export const acceso = async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://simulador-financiero-frontend.vercel.app/"
+  );
   const { correo, contrasenia } = req.body;
   try {
     const usuarioEncontrado = await Usuario.findOne({ correo });
