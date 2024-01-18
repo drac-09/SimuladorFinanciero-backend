@@ -30,7 +30,7 @@ app.use("/api/", usuarioRoutes);
 app.use("/api/", escenarioRoutes);
 
 //Mensaje
-app.get("/", function (req, res) {
+app.get("/api/", function (req, res) {
   res.send("Servidor Funcionando");
 });
 
