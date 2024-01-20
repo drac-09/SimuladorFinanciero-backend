@@ -15,12 +15,7 @@
         "POST",
         "PUT",
         "DELETE"
-      ]
-    }
-  ],
-  "headers": [
-    {
-      "source": "/src/(.*)",
+      ],
       "headers": [
         {
           "key": "Access-Control-Allow-Credentials",
