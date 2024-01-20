@@ -36,7 +36,7 @@ export const registro = async (req, res) => {
 };
 
 export const acceso = async (req, res) => {
-  return res.status(200).json(["Paso hasta aqui"]);
+  return res.status(200).json(["Acceso"]);
   // const { correo, contrasenia } = req.body;
   // try {
   //   const usuarioEncontrado = await Usuario.findOne({ correo });
