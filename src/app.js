@@ -10,13 +10,12 @@ const app = express();
 const lista = [
   `http://localhost:${process.env.PORT_FRONTEND}`,
   "https://simulador-financiero-frontend.vercel.app/",
-  "https://vercel.com/drac-09/simulador-financiero-frontend/E5wgczVnXqeruEx8QQhmRV7fVgVF",
 ];
 
 // Middlewares
 app.use(
   cors({
-    origin: "*",
+    origin: lista,
     credentials: true,
   })
 );
