@@ -7,19 +7,29 @@ import usuarioRoutes from "./routers/usuario.routes.js";
 import escenarioRoutes from "./routers/escenario.routes.js";
 
 const app = express();
-const lista = [
-  `http://localhost:${process.env.PORT_FRONTEND}`,
-  "https://simulador-financiero-frontend.vercel.app/",
-  "https://vercel.com/drac-09/simulador-financiero-frontend/E5wgczVnXqeruEx8QQhmRV7fVgVF",
+const options = [
+  cors({
+    origin: "*",
+    methods: "*",
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  }),
 ];
 
-// Middlewares
-app.use(
-  cors({
-    origin: lista,
-    credentials: true,
-  })
-);
+app.use(options);
+// const lista = [
+//   `http://localhost:${process.env.PORT_FRONTEND}`,
+//   "https://simulador-financiero-frontend.vercel.app/",
+//   "https://vercel.com/drac-09/simulador-financiero-frontend/E5wgczVnXqeruEx8QQhmRV7fVgVF",
+// ];
+
+// // Middlewares
+// app.use(
+//   cors({
+//     origin: lista,
+//     credentials: true,
+//   })
+// );
 
 app.use(morgan("dev"));
 app.use(cookieParser());
