@@ -36,29 +36,28 @@ export const registro = async (req, res) => {
 };
 
 export const acceso = async (req, res) => {
-  return res.status(200).json(["Acceso"]);
-  // const { correo, contrasenia } = req.body;
-  // try {
-  //   const usuarioEncontrado = await Usuario.findOne({ correo });
+  const { correo, contrasenia } = req.body;
+  try {
+    const usuarioEncontrado = await Usuario.findOne({ correo });
 
-  //   if (!usuarioEncontrado)
-  //     return res.status(400).json(["Usuario no Encontrado"]);
+    if (!usuarioEncontrado)
+      return res.status(400).json(["Usuario no Encontrado"]);
 
-  //   const comparar = await bcrypt.compare(
-  //     contrasenia,
-  //     usuarioEncontrado.contrasenia
-  //   );
-  //   if (!comparar) return res.status(400).json(["Error en Contraseña"]);
-  //   const token = await crearAccesoToken({ id: usuarioEncontrado._id });
-  //   res.cookie("token", token);
-  //   res.json({
-  //     id: usuarioEncontrado._id,
-  //     correo: usuarioEncontrado.correo,
-  //     token: token,
-  //   });
-  // } catch (error) {
-  //   res.status(500).json({ message: error.message });
-  // }
+    const comparar = await bcrypt.compare(
+      contrasenia,
+      usuarioEncontrado.contrasenia
+    );
+    if (!comparar) return res.status(400).json(["Error en Contraseña"]);
+    const token = await crearAccesoToken({ id: usuarioEncontrado._id });
+    res.cookie("token", token);
+    res.json({
+      id: usuarioEncontrado._id,
+      correo: usuarioEncontrado.correo,
+      token: token,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const cerrar = (req, res) => {
