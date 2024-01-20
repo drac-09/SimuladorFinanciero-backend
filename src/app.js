@@ -14,12 +14,7 @@ const lista = [
 ];
 
 // Middlewares
-app.use(
-  cors({
-    origin: lista,
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "*");
