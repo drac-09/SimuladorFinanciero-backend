@@ -1,4 +1,6 @@
 import Usuario from "../models/usuario.model.js";
+import Escenario from "../models/escenario.model.js";
+
 import bcrypt from "bcrypt";
 import { crearAccesoToken } from "../libs/jwt.js";
 import jwt from "jsonwebtoken";
@@ -67,9 +69,14 @@ export const cerrar = (req, res) => {
   return res.sendStatus(200);
 };
 
-export const prueba = (req, res) => {
-  const { correo, contrasenia } = req.body;
-  return res.json({ correo, contrasenia });
+export const prueba = async (req, res) => {
+  try {
+    const escenarios = await Escenario.find();
+    res.json(escenarios);
+  } catch (error) {
+    // console.log(req);
+    return res.status(404).json({ message: `Algo salio mal` });
+  }
 };
 
 // export const profile = async (req, res) => {
