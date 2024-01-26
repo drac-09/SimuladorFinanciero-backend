@@ -49,13 +49,13 @@ export const acceso = async (req, res) => {
       contrasenia,
       usuarioEncontrado.contrasenia
     );
-    if (!comparar) return res.status(400).json(["Error en Contraseña"]);
-    const token = await crearAccesoToken({ id: usuarioEncontrado._id });
+    // if (!comparar) return res.status(400).json(["Error en Contraseña"]);
+    // const token = await crearAccesoToken({ id: usuarioEncontrado._id });
     res.cookie("token", token);
     res.json({
       id: usuarioEncontrado._id,
       correo: usuarioEncontrado.correo,
-      token: token,
+      // token: token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
