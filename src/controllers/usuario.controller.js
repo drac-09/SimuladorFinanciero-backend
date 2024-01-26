@@ -53,7 +53,7 @@ export const acceso = async (req, res) => {
     res.json({
       id: usuarioEncontrado._id,
       correo: usuarioEncontrado.correo,
-      token: token,
+      // token: token,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
