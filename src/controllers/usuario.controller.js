@@ -45,10 +45,10 @@ export const acceso = async (req, res) => {
     if (!usuarioEncontrado)
       return res.status(400).json(["Usuario no Encontrado"]);
 
-    const comparar = await bcrypt.compare(
-      contrasenia,
-      usuarioEncontrado.contrasenia
-    );
+    // const comparar = await bcrypt.compare(
+    //   contrasenia,
+    //   usuarioEncontrado.contrasenia
+    // );
     // if (!comparar) return res.status(400).json(["Error en Contraseña"]);
     // const token = await crearAccesoToken({ id: usuarioEncontrado._id });
     res.cookie("token", token);
