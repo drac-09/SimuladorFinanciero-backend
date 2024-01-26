@@ -56,7 +56,7 @@ export const acceso = async (req, res) => {
       // token: token,
     });
   } catch (error) {
-    res.status(500).json(["No se pudo acceder"]);
+    res.status(500).json({ message: error.message });
   }
 };
 
