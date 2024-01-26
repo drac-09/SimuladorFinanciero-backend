@@ -6,7 +6,7 @@ export const autenticacionRequerida = (req, res, next) => {
   if (!token)
     return res
       .status(401)
-      .json({ message: "No existe el token, autorización denegada" });
+      .json({ message: "No existe el token, autorización denegada", req });
 
   jwt.verify(token, process.env.TOKEN_SECRET, (err, usuario) => {
     if (err) return res.status(403).json({ message: "Token Invalido" });
