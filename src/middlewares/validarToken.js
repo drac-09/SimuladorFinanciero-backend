@@ -10,6 +10,7 @@ export const autenticacionRequerida = (req, res, next) => {
     // Incluye otros detalles que consideres necesarios
   };
   // console.log(req);
+  // return res.status(401).json({ requestData });
   if (!token)
     return res
       .status(401)
@@ -19,6 +20,5 @@ export const autenticacionRequerida = (req, res, next) => {
     if (err) return res.status(403).json({ message: "Token Invalido" });
     req.usuario = usuario;
     next();
-    return res.status(401).json({ requestData });
   });
 };
