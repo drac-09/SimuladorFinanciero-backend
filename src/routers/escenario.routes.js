@@ -11,7 +11,7 @@ import { crearEscenarioSchema } from "../schemas/escenario.schema.js";
 
 const router = Router();
 
-router.get("/escenarios", autenticacionRequerida, obtenerEscenarios);
+router.get("/escenarios", obtenerEscenarios);
 router.post(
   "/escenario",
   autenticacionRequerida,

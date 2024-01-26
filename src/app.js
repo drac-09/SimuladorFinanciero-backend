@@ -8,8 +8,8 @@ import escenarioRoutes from "./routers/escenario.routes.js";
 
 const app = express();
 const lista = [
-  `http://localhost:${process.env.PORT_FRONTEND}`,
   "https://simulador-financiero-frontend.vercel.app/",
+  `http://localhost:${process.env.PORT_FRONTEND}`,
 ];
 
 // Middlewares
