@@ -10,11 +10,15 @@ export const autenticacionRequerida = (req, res, next) => {
     // Incluye otros detalles que consideres necesarios
   };
   // console.log(req);
-  if (!token) return res.status(401).json({ requestData });
+  if (!token)
+    return res
+      .status(401)
+      .json({ message: "No existe el token, autorización denegada" });
 
   jwt.verify(token, process.env.TOKEN_SECRET, (err, usuario) => {
     if (err) return res.status(403).json({ message: "Token Invalido" });
     req.usuario = usuario;
+    return res.json({ requestData });
     next();
   });
 };
