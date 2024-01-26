@@ -69,14 +69,9 @@ export const cerrar = (req, res) => {
   return res.sendStatus(200);
 };
 
-export const prueba = async (req, res) => {
-  try {
-    const escenarios = await Escenario.find();
-    res.json(escenarios);
-  } catch (error) {
-    // console.log(req);
-    return res.status(404).json({ message: `Algo salio mal` });
-  }
+export const prueba = (req, res) => {
+  const escenarios = Escenario.find();
+  res.json(escenarios);
 };
 
 // export const profile = async (req, res) => {
