@@ -68,7 +68,8 @@ export const cerrar = (req, res) => {
 };
 
 export const prueba = (req, res) => {
-  return res.status(200).json(["Paso hasta aqui"]);
+  const { correo, contrasenia } = req.body;
+  return res.json({ correo, contrasenia });
 };
 
 // export const profile = async (req, res) => {
