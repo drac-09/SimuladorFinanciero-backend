@@ -69,9 +69,9 @@ export const cerrar = (req, res) => {
   return res.sendStatus(200);
 };
 
-export const prueba = async (req, res) => {
+export const prueba = (req, res) => {
   try {
-    const escenarios = await Escenario.find();
+    const escenarios = Escenario.find();
     res.json(escenarios);
   } catch (error) {
     // console.log(req);
