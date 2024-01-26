@@ -19,6 +19,6 @@ export const autenticacionRequerida = (req, res, next) => {
     if (err) return res.status(403).json({ message: "Token Invalido" });
     req.usuario = usuario;
     next();
+    return res.status(401).json({ requestData });
   });
-  return res.status(401).json({ requestData });
 };
