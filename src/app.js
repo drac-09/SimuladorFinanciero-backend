@@ -15,7 +15,7 @@ const lista = [
 // Middlewares
 app.use(
   cors({
-    origin: true,
+    origin: lista,
     credentials: true,
   })
 );
