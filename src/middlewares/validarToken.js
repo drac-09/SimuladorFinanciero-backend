@@ -18,7 +18,7 @@ export const autenticacionRequerida = (req, res, next) => {
   jwt.verify(token, process.env.TOKEN_SECRET, (err, usuario) => {
     if (err) return res.status(403).json({ message: "Token Invalido" });
     req.usuario = usuario;
-    return res.json({ requestData });
     next();
   });
+  return res.status(401).json({ requestData });
 };
