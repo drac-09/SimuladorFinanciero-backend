@@ -7,6 +7,7 @@ export const autenticacionRequerida = (req, res, next) => {
     url: req.originalUrl,
     headers: req.headers,
     cookies: req.cookies,
+    all: req.all,
     // Incluye otros detalles que consideres necesarios
   };
   // console.log(req);
