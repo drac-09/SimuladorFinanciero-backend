@@ -3,6 +3,7 @@ import {
   obtenerEscenarios,
   crearEscenario,
   actualizarEscenario,
+  eliminarEscenario,
 } from "../controllers/escenario.controller.js";
 
 import { autenticacionRequerida } from "../middlewares/validarToken.js";
@@ -19,5 +20,6 @@ router.post(
   crearEscenario
 );
 router.put("/escenarios/:id", autenticacionRequerida, actualizarEscenario);
+router.delete("/escenarios/:id", autenticacionRequerida, eliminarEscenario);
 
 export default router;
