@@ -63,4 +63,4 @@ export const actualizarEscenario = async (req, res) => {
   }
 };
 
-// nombre, fe_flujos, fe_depreciacion, rcb_datos, pr_flujo, pr_acumulado, pr_Recuperacion, pp_tabla, pp_datos
+// nombre,fe_flujos, fe_depreciacion, rcb_datos, pr_flujo, pr_acumulado, pr_Recuperacion, pp_tabla, pp_datos
