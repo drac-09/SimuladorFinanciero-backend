@@ -15,7 +15,7 @@ const lista = [
 // Middlewares
 app.use(
   cors({
-    origin: "https://simulador-financiero-frontend.vercel.app/",
+    origin: "*",
     credentials: true,
   })
 );
